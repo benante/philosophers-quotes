@@ -10,14 +10,15 @@ interface buttonProps {
 
 const ButtonGenerator: React.FC<buttonProps> = ({ setQuote }) => {
   const handleClick = () => {
+    console.log('clicked');
     setQuote(generateRandom);
   };
   return (
     <button
-      className="cursor-pointer p-2 mt-4 text-xl rounded  bg-[var(--teal)] text-[var(--beige)] hover:text-[var(--orange)] hover:bg-[var(--beige)]"
+      className="cursor-pointer p-2.5 mt-7 text-xl border  box-shadow   rounded  bg-[var(--teal)] text-black  hover:bg-[var(--beige)]"
       onClick={handleClick}
     >
-      Generate a Quote
+      Get Some Wisdom
     </button>
   );
 };

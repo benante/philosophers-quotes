@@ -9,6 +9,29 @@
 
 body {
   background: var(--orange);
-  color: var(--beige);
+  color: black;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.box-shadow {
+  box-shadow: 2px 2px 2px black;
+}
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.teal-bg {
+  background-color: var(--teal);
+}
+
+main:last-child {
+  width: 100vw;
+}
+
+@media (min-width: 768px) {
+  .image {
+    width: 80%;
+  }
 }
