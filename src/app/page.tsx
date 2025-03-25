@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
-import ButtonGenerator from './components/ButtonGenerator';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import generateRandom from './quotes';
 
 const Home: React.FC = () => {
   const [quote, setQuote] = useState<{ author: string; statement: string }>({
@@ -9,11 +9,22 @@ const Home: React.FC = () => {
     statement: '',
   });
 
+  const divQuote = useRef<HTMLDivElement | null>(null);
+
+  const handleClick = () => {
+    setQuote(generateRandom);
+    setTimeout(() => {
+      if (divQuote) {
+        divQuote.current?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 500);
+  };
+
   return (
     <>
       <header>
         <nav className="p-3 pt-6 md:p-10 flex flex-col items-center ">
-          <h1 className="font-bold text-6xl tracking-widest">
+          <h1 className="font-bold text-6xl sm:text-8xl tracking-widest">
             Philosophy Quotes
           </h1>
         </nav>
@@ -29,7 +40,8 @@ const Home: React.FC = () => {
             problems
           </p>
           <h2 className="text-2xl text-right">
-            A generator of random quotes by great thinkers
+            A <span>generator</span> of random <span>quotes</span> by great{' '}
+            <span>thinkers</span>
           </h2>
           <Image
             src="/philosophers-min.jpg"
@@ -39,12 +51,17 @@ const Home: React.FC = () => {
             priority={true}
             className="image"
           ></Image>
-          <ButtonGenerator setQuote={setQuote}></ButtonGenerator>
+          <button
+            className="cursor-pointer p-3 mt-7 text-xl border  box-shadow   rounded  bg-[var(--teal)] text-black   hover:bg-[var(--beige)] active:bg-[var(--beige)]"
+            onClick={handleClick}
+          >
+            Get a quote
+          </button>
         </div>
         <div>
           {quote.statement !== '' && (
-            <div className="text-center p-10  teal-bg ">
-              <p className="italic font-sans text-xl">{quote.statement}</p>
+            <div ref={divQuote} className="text-center p-20  teal-bg ">
+              <p className=" text-xl">{quote.statement}</p>
               <p className="font-bold mt-2.5">{quote.author}</p>
             </div>
           )}

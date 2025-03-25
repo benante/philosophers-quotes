@@ -10,9 +10,17 @@
 body {
   background: var(--orange);
   color: black;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat);
 }
-
+h1 {
+  font-family: var(--font-robotoFlex);
+}
+h2 {
+  font-family: var(--montserrat-underline);
+}
+span {
+  color: var(--peach);
+}
 .box-shadow {
   box-shadow: 2px 2px 2px black;
 }
