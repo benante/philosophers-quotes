@@ -24,8 +24,8 @@ const Home: React.FC = () => {
     <>
       <header>
         <nav className="p-3 pt-6 md:p-10 flex flex-col items-center ">
-          <h1 className="font-bold text-6xl sm:text-8xl tracking-widest">
-            Philosophy Quotes
+          <h1 className="font-bold text-6xl sm:text-8xl tracking-wides">
+            Philosophy Aphorisms
           </h1>
         </nav>
       </header>
@@ -35,12 +35,12 @@ const Home: React.FC = () => {
           className="flex flex-col items-center gap-3 p-3 pb-10  md:p-10 "
         >
           <p className="text-xs tracking-widest leading-8">
-            In a world full of uncertainty, pain, and grief, only philosophy can
-            help you out… or at least confuse you so much that you forget your
+            In a world full of uncertainty, pain, and grief, philosophy can help
+            you out… or at least confuse you so much that you forget your
             problems
           </p>
           <h2 className="text-2xl text-right">
-            A <span>generator</span> of random <span>quotes</span> by great{' '}
+            A <span>generator</span> of random <span>aphorisms</span> by great{' '}
             <span>thinkers</span>
           </h2>
           <Image
@@ -52,10 +52,10 @@ const Home: React.FC = () => {
             className="image"
           ></Image>
           <button
-            className="cursor-pointer p-3 mt-7 text-xl border  box-shadow   rounded  bg-[var(--teal)] text-black   hover:bg-[var(--beige)] active:bg-[var(--beige)]"
+            className="p-2 sm:p-3 mt-7 text-xl border  box-shadow teal-bg "
             onClick={handleClick}
           >
-            Get a quote
+            Get an aphorism
           </button>
         </div>
         <div>

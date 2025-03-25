@@ -14,9 +14,18 @@ body {
 }
 h1 {
   font-family: var(--font-robotoFlex);
+  text-align: center;
 }
 h2 {
   font-family: var(--montserrat-underline);
+}
+button {
+  cursor: pointer;
+  border-radius: 5px;
+  color: black;
+}
+button:hover {
+  background-color: var(--beige);
 }
 span {
   color: var(--peach);
@@ -27,9 +36,8 @@ span {
 .image {
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 20px;
 }
-
 .teal-bg {
   background-color: var(--teal);
 }
@@ -41,5 +49,11 @@ main:last-child {
 @media (min-width: 768px) {
   .image {
     width: 80%;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 3em;
   }
 }
